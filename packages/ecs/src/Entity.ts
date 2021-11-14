@@ -1,0 +1,55 @@
+import { Component } from './Component';
+
+interface ComponentClass<T = unknown, P = unknown> extends Component {
+  properties: P;
+  new (p?: P): T;
+};
+
+export class Entity {
+  id: number;
+  components: Component[] = [];
+
+  addComponent<T extends Component, P = unknown>(componentClass: ComponentClass<T, P>, properties?: P) {
+    const component = new componentClass(properties);
+    component.properties = properties ?? componentClass.properties;
+    this.components.push(component);
+
+    return this;
+  }
+
+  removeComponent<T extends Component>(componentClass: ComponentClass<T>) {
+    const index = this.components.findIndex((component) => {
+      return component instanceof componentClass;
+    });
+
+    this.components.splice(index, 1);
+
+    return this;
+  }
+
+  has<T extends Component>(componentClass: ComponentClass<T>) {
+    return this.components.some((component) => {
+      return component instanceof componentClass;
+    });
+  }
+
+  hasAll<T extends Component>(...componentClasses: ComponentClass<T>[]) {
+    return componentClasses.every((componentClass) => {
+      return this.components.some((component) => {
+        return component instanceof componentClass;
+      });
+    });
+  }
+
+  getComponent<T extends Component, P = unknown>(componentClass: ComponentClass<T, P>): Component<P> {
+    return this.components.find((component) => {
+      return component instanceof componentClass;
+    }) as Component<P>;
+  }
+
+  withComponent<T extends Component>(componentClass: ComponentClass<T>, callback: (component: T) => void) {
+    this.components.forEach((component) => {
+      if (component instanceof componentClass) callback(component);
+    });
+  }
+}
