@@ -15,8 +15,9 @@ export class MapSystem extends System {
   mapsQuery: Query;
 
   init() {
-    this.mapsQuery = new Query((entity) => entity.has(MapDataComponent) && entity.has(FrameComponent));
-    this.world.registerQuery(this.mapsQuery);
+    this.mapsQuery = this.world.registerQuery((entity) => {
+      return entity.has(MapDataComponent) && entity.has(FrameComponent);
+    });
 
     this.world.createEntity()
       .addComponent(new FrameComponent({

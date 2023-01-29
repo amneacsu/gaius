@@ -10,11 +10,9 @@ export class RendererSystem extends System {
   frameQuery: Query;
 
   init() {
-    this.frameQuery = new Query((entity) => {
+    this.frameQuery = this.world.registerQuery((entity) => {
       return entity.has(FrameComponent);
     });
-
-    this.world.registerQuery(this.frameQuery);
 
     const surface = new Surface();
     this.surface = surface;

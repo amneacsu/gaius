@@ -13,11 +13,9 @@ export class KeyboardSystem extends System {
   mapViewQuery: Query;
 
   init() {
-    this.mapViewQuery = new Query((entity) => {
+    this.mapViewQuery = this.world.registerQuery((entity) => {
       return entity.has(MapCameraComponent);
     });
-
-    this.world.registerQuery(this.mapViewQuery);
 
     window.addEventListener('keydown', (event) => {
       if (this.keyDown.hasOwnProperty(event.code)) {

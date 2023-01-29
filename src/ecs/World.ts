@@ -1,5 +1,5 @@
 import { Entity } from './Entity';
-import { Query } from './Query';
+import { Query, QueryPredicate } from './Query';
 import { System } from './System';
 
 export class World {
@@ -27,8 +27,10 @@ export class World {
     return this;
   }
 
-  registerQuery(query: Query) {
+  registerQuery(predicate: QueryPredicate) {
+    const query = new Query(predicate);
     this.queries.push(query);
+    return query;
   }
 
   execute() {
