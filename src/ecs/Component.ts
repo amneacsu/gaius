@@ -1,3 +1,3 @@
-export abstract class Component {
-
+export class Component {
+  _componentBrand: void;
 }

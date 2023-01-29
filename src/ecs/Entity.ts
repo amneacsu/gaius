@@ -21,13 +21,13 @@ export class Entity {
     return this;
   }
 
-  has<T>(componentClass: Class<T>) {
+  has<T extends Component>(componentClass: Class<T>) {
     return Boolean(this.components.find((component) => {
       return component instanceof componentClass;
     }));
   }
 
-  hasAll<T>(...componentClasses: Class<T>[]) {
+  hasAll<T extends Component>(...componentClasses: Class<T>[]) {
     return componentClasses.every((componentClass) => {
       return Boolean(this.components.find((component) => {
         return component instanceof componentClass;
@@ -35,13 +35,13 @@ export class Entity {
     });
   }
 
-  getComponent<T>(componentClass: Class<T>): T | undefined {
+  getComponent<T extends Component>(componentClass: Class<T>): T | undefined {
     return this.components.find((component) => {
       return component instanceof componentClass;
     }) as T;
   }
 
-  withComponent<T>(componentClass: Class<T>, callback: (component: T) => void) {
+  withComponent<T extends Component>(componentClass: Class<T>, callback: (component: T) => void) {
     this.components.forEach((component) => {
       if (component instanceof componentClass) callback(component);
     });
