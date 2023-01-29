@@ -1,6 +1,5 @@
 import { System, Query } from '../ecs';
 
-import { Rng } from '../core/Rng';
 import { Sprite } from '../core/Sprite';
 import {
   MapCameraComponent,
@@ -12,32 +11,12 @@ const spriteSize = 64;
 const halfSprite = spriteSize * .5;
 const quarterSprite = spriteSize * .25;
 
-const generateMapData = (width: number, height: number) => {
-  const rng = new Rng();
-  const data = [];
-  for (let index = 0; index < width * height; index += 1) {
-    const x = index % width;
-    const y = ~~(index / width);
-    data.push({
-      x,
-      y,
-      type: rng.sample([0, 2]),
-    });
-  }
-
-  return data;
-};
-
 export class MapSystem extends System {
   mapsQuery: Query;
 
   init() {
     this.mapsQuery = new Query((entity) => entity.has(MapDataComponent) && entity.has(FrameComponent));
     this.world.registerQuery(this.mapsQuery);
-
-    const width = 16;
-    const height = 16;
-    const data = generateMapData(width, height);
 
     this.world.createEntity()
       .addComponent(new FrameComponent({
@@ -47,9 +26,9 @@ export class MapSystem extends System {
         h: 576,
       }))
       .addComponent(new MapDataComponent({
-        width,
-        height,
-        data,
+        width: 16,
+        height: 16,
+        random: true,
       }))
       .addComponent(new MapCameraComponent({
         originX: 8,
@@ -59,20 +38,18 @@ export class MapSystem extends System {
 
   execute() {
     this.mapsQuery.entities.forEach((entity) => {
-      const mapData = entity.getComponent(MapDataComponent)!;
-      const { data } = mapData;
-
       const mapCamera = entity.getComponent(MapCameraComponent)!;
       const { originX, originY } = mapCamera;
 
       const frame = entity.getComponent(FrameComponent)!;
-      const surface = frame.surface;
       const halfFrameWidth = frame.w / 2;
       const halfFrameHeight = frame.h / 2;
 
+      const surface = frame.surface;
       surface.clear();
 
-      data.forEach((value) => {
+      const { mapData } = entity.getComponent(MapDataComponent)!;
+      mapData.forEach((value) => {
         const x = value.x - originX;
         const y = value.y - originY;
         const newX = (x - y) * halfSprite + halfFrameWidth;

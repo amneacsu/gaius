@@ -1,17 +1,35 @@
 import { Component } from '../ecs';
+import { Rng } from '../core/Rng';
+
+const generateMapData = (width: number, height: number) => {
+  const rng = new Rng();
+  const data = [];
+  for (let index = 0; index < width * height; index += 1) {
+    const x = index % width;
+    const y = ~~(index / width);
+    data.push({
+      x,
+      y,
+      type: rng.sample([0, 2]),
+    });
+  }
+
+  return data;
+};
 
 type MapDataComponentData = {
-  data: {
+  mapData?: {
     x: number;
     y: number;
     type: number;
   }[];
   height: number;
   width: number;
+  random?: boolean;
 };
 
 export class MapDataComponent extends Component {
-  data: {
+  mapData: {
     x: number;
     y: number;
     type: number;
@@ -21,8 +39,18 @@ export class MapDataComponent extends Component {
 
   constructor(data: MapDataComponentData) {
     super();
-    this.data = data.data;
-    this.height = data.height;
-    this.width = data.width;
+    const {
+      width = 16,
+      height = 16,
+      mapData = [],
+      random = false,
+    } = data;
+
+    this.height = height;
+    this.width = width;
+
+    this.mapData = random
+      ? generateMapData(width, height)
+      : mapData;
   }
 }
