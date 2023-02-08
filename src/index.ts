@@ -1,4 +1,5 @@
 import { World } from './ecs';
+import './Game';
 
 const world = new World();
 
