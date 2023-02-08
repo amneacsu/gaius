@@ -7,7 +7,6 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 12,
     sourceType: 'module',
-    project: './tsconfig.json',
   },
   plugins: [
     '@typescript-eslint',
@@ -22,6 +21,5 @@ module.exports = {
     'no-undef': ['error'],
     'space-infix-ops': ['error'],
     '@typescript-eslint/no-unused-vars': ['error'],
-    '@typescript-eslint/no-unnecessary-condition': ['error'],
   },
 };
