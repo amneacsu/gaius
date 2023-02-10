@@ -3,6 +3,7 @@ import React from 'react';
 import { useWorld } from '../../WorldContext';
 import { useStage, Stage } from '../../StageContext';
 import { useTicker } from './useTicker';
+import { Debug } from './Debug';
 
 export const MainStage = () => {
   const [, setStage] = useStage();
@@ -21,6 +22,7 @@ export const MainStage = () => {
       <p>
         <button onClick={() => setStage(Stage.PauseStage)}>Pause</button>
       </p>
+      <Debug />
     </div>
   );
 };
