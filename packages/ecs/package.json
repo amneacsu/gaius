@@ -1,0 +1,4 @@
+{
+  "name": "@gaius/ecs",
+  "main": "src/index.ts"
+}

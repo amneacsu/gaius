@@ -1,7 +1,6 @@
 import React from 'react';
-
-import { useStage, Stage } from '../../StageContext';
-import { useWorld } from '../../WorldContext';
+import { useStage, useWorld, Stage } from '@gaius/core';
+import { Button } from '@gaius/ui';
 
 export const PauseStage = () => {
   const [, setStage] = useStage();
@@ -11,22 +10,22 @@ export const PauseStage = () => {
     <div>
       <h1>PauseStage</h1>
       <p>
-        <button
+        <Button
           onClick={() => {
-            setStage(Stage.MainStage);
+            setStage(Stage.Game);
           }}
         >
           Resume
-        </button>
+        </Button>
       </p>
       <p>
-        <button
+        <Button
           onClick={() => {
-            setStage(Stage.MenuStage);
+            setStage(Stage.MainMenu);
             world.destroy();
           }}>
           Quit to menu
-        </button>
+        </Button>
       </p>
     </div>
   );

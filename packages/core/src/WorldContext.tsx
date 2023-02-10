@@ -1,5 +1,5 @@
 import React from 'react';
-import { World } from './ecs';
+import { World } from '@gaius/ecs';
 
 const WorldContext = React.createContext<World>(null!);
 

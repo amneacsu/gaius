@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Stage } from './global';
+import { Stage } from './types';
 import config from './config';
 
 export const StageContext = React.createContext<[
@@ -19,4 +19,3 @@ export const StageProvider = ({ children }: React.PropsWithChildren) => {
 };
 
 export const useStage = () => React.useContext(StageContext);
-export { Stage } from './global';

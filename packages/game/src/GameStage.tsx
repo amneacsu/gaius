@@ -1,11 +1,10 @@
 import React from 'react';
-
-import { useWorld } from '../../WorldContext';
-import { useStage, Stage } from '../../StageContext';
+import { useStage, Stage, useWorld } from '@gaius/core';
+import { Button } from '@gaius/ui';
 import { useTicker } from './useTicker';
 import { Debug } from './Debug';
 
-export const MainStage = () => {
+export const GameStage = () => {
   const [, setStage] = useStage();
   useTicker();
   const world = useWorld();
@@ -17,10 +16,10 @@ export const MainStage = () => {
         Entity count: {world.entities.length}
       </p>
       <p>
-        <button onClick={() => world.createEntity()}>Create entity</button>
+        <Button onClick={() => world.createEntity()}>Create entity</Button>
       </p>
       <p>
-        <button onClick={() => setStage(Stage.PauseStage)}>Pause</button>
+        <Button onClick={() => setStage(Stage.Pause)}>Pause</Button>
       </p>
       <Debug />
     </div>

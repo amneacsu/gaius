@@ -1,0 +1,11 @@
+{
+  "name": "@gaius/main",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "concurrently -p \"[{name}]\" -n \"server,esbuild,tsc\" -c \"cyan,magenta,yellow\" \"npm:serve\" \"npm:bundle\" \"npm:check-types\"",
+    "check-types": "tsc --watch --preserveWatchOutput --noEmit",
+    "serve": "http-server -s ./",
+    "bundle": "esbuild ./src --bundle --outfile=build/index.js --sourcemap --watch",
+    "build": "esbuild ./src --bundle --outfile=build/index.js --minify"
+  }
+}

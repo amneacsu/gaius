@@ -2,13 +2,12 @@
   "name": "gaius",
   "version": "1.0.0",
   "description": "",
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "lint": "eslint src --ext ts",
-    "start": "concurrently -p \"[{name}]\" -n \"server,esbuild,tsc\" -c \"cyan,magenta,yellow\" \"npm:serve\" \"npm:bundle\" \"npm:check-types\"",
-    "check-types": "tsc --watch --preserveWatchOutput --noEmit",
-    "serve": "http-server -s ./",
-    "bundle": "esbuild src/index.ts --bundle --outfile=build/index.js --sourcemap --watch",
-    "build": "esbuild src/index.ts --bundle --outfile=build/index.js --minify"
+    "start": "npm run start -w @gaius/main"
   },
   "author": "",
   "license": "ISC",

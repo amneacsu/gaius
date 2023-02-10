@@ -1,0 +1,4 @@
+{
+  "name": "@gaius/utils",
+  "main": "src/index.ts"
+}

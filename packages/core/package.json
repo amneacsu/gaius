@@ -1,0 +1,4 @@
+{
+  "name": "@gaius/core",
+  "main": "src/index.ts"
+}

@@ -1,7 +1,7 @@
 import React from 'react';
+import { useWorld } from '@gaius/core';
 
 import * as S from './styles';
-import { useWorld } from '../../../core';
 
 export const Debug = () => {
   const world = useWorld();
