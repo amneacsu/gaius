@@ -13,7 +13,7 @@ export const PauseStage = () => {
       <p>
         <button
           onClick={() => {
-            setStage(Stage.Game);
+            setStage(Stage.MainStage);
           }}
         >
           Resume
@@ -22,7 +22,7 @@ export const PauseStage = () => {
       <p>
         <button
           onClick={() => {
-            setStage(Stage.MainMenu);
+            setStage(Stage.MenuStage);
             world.destroy();
           }}>
           Quit to menu

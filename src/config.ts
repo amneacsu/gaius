@@ -1,5 +1,6 @@
 import { Stage } from './global';
 
 export default {
-  initialStage: Stage.MainMenu,
+  // initialStage: Stage.MenuStage,
+  initialStage: Stage.MainStage,
 };

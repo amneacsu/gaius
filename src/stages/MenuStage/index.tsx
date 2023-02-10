@@ -8,7 +8,7 @@ export const MenuStage = () => {
   return (
     <div>
       <h1>MenuStage</h1>
-      <button onClick={() => setStage(Stage.Game)}>Play</button>
+      <button onClick={() => setStage(Stage.MainStage)}>Play</button>
     </div>
   );
 };

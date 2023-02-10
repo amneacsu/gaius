@@ -7,25 +7,27 @@ import { WorldProvider } from './WorldContext';
 
 const Main = () => {
   return (
-    <React.StrictMode>
-      <WorldProvider>
-        <StageProvider>
-          <StageContext.Consumer>
-            {([stage]) => {
-              switch (stage ) {
-                case Stage.MainMenu: return <MenuStage />;
-                case Stage.Game: return <MainStage />;
-                case Stage.PauseMenu: return <PauseStage />;
-                default: throw new Error(`Unhandled stage ${stage}.`);
-              }
-            }}
-          </StageContext.Consumer>
-        </StageProvider>
-      </WorldProvider>
-    </React.StrictMode>
+    <WorldProvider>
+      <StageProvider>
+        <StageContext.Consumer>
+          {([stage]) => {
+            switch (stage ) {
+              case Stage.MenuStage: return <MenuStage />;
+              case Stage.MainStage: return <MainStage />;
+              case Stage.PauseStage: return <PauseStage />;
+              default: throw new Error(`Unhandled stage ${stage}.`);
+            }
+          }}
+        </StageContext.Consumer>
+      </StageProvider>
+    </WorldProvider>
   );
 };
 
 const container = document.getElementById('root');
 const root = createRoot(container!);
-root.render(<Main />);
+root.render(
+  <React.StrictMode>
+    <Main />
+  </React.StrictMode>,
+);

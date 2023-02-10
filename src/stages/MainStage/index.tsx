@@ -19,7 +19,7 @@ export const MainStage = () => {
         <button onClick={() => world.createEntity()}>Create entity</button>
       </p>
       <p>
-        <button onClick={() => setStage(Stage.PauseMenu)}>Pause</button>
+        <button onClick={() => setStage(Stage.PauseStage)}>Pause</button>
       </p>
     </div>
   );

@@ -1,5 +1,5 @@
 export enum Stage {
-  MainMenu,
-  Game,
-  PauseMenu,
+  MenuStage,
+  MainStage,
+  PauseStage,
 };
