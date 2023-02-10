@@ -1,1 +1,1 @@
-import './Game';
+import './Main';

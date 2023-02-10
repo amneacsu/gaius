@@ -53,4 +53,8 @@ export class World {
 
     this.systems.forEach((system) => system.execute());
   }
+
+  destroy() {
+    this.entities = [];
+  }
 };
