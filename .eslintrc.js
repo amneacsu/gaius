@@ -23,4 +23,15 @@ module.exports = {
     'space-infix-ops': ['error'],
     '@typescript-eslint/no-unused-vars': ['error'],
   },
+  overrides: [
+    {
+      files: ['*.tsx'],
+      plugins: [
+        'react',
+      ],
+      rules: {
+        'react/react-in-jsx-scope': ['error'],
+      },
+    },
+  ],
 };
