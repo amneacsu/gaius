@@ -7,4 +7,18 @@ export const Debug = styled.div`
   top: 0;
   padding: 8px;
   background: #333;
+  font-size: 12px;
+`;
+
+export const DebugGroup = styled.details`
+
+`;
+
+export const DebugGroupName = styled.summary`
+  cursor: pointer;
+`;
+
+export const DebugGroupContents = styled.div`
+  margin-top: 16px;
+  margin-left: 16px;
 `;
