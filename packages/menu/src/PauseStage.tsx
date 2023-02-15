@@ -6,23 +6,16 @@ export const PauseStage = () => {
   const [, setStage] = useStage();
   const world = useWorld();
 
+  const quit = () => {
+    setStage(Stage.MainMenu);
+    world.destroy();
+  };
+
   return (
     <React.Fragment>
       <Menu title="Pause">
-        <Button
-          onClick={() => {
-            setStage(Stage.Game);
-          }}
-        >
-          Resume
-        </Button>
-        <Button
-          onClick={() => {
-            setStage(Stage.MainMenu);
-            world.destroy();
-          }}>
-          Quit to menu
-        </Button>
+        <Button onClick={() => setStage(Stage.Debug)}>Resume</Button>
+        <Button onClick={() => quit()}>Quit to menu</Button>
       </Menu>
       <Background id="pause" />
     </React.Fragment>

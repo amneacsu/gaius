@@ -15,10 +15,10 @@ const BackgroundWrapper = styled.div<{
   opacity: 0.5;
 `;
 
-type BackgroundId = 'menu' | 'game' | 'pause';
+type BackgroundId = 'menu' | 'debug' | 'pause';
 const backgrounds: Record<BackgroundId, string> = {
   menu: './assets/menu.png',
-  game: './assets/game.png',
+  debug: './assets/debug.png',
   pause: './assets/xcom.png',
 };
 

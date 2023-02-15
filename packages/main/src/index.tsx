@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { Stage, StageProvider, StageContext, WorldProvider } from '@gaius/core';
-import { GameStage } from '@gaius/game';
+import { DebugStage } from '@gaius/game';
 import { MainMenuStage, PauseStage } from '@gaius/menu';
 
 const Main = () => {
@@ -12,7 +12,7 @@ const Main = () => {
           {([stage]) => {
             switch (stage ) {
               case Stage.MainMenu: return <MainMenuStage />;
-              case Stage.Game: return <GameStage />;
+              case Stage.Debug: return <DebugStage />;
               case Stage.Pause: return <PauseStage />;
               default: throw new Error(`Unhandled stage ${stage}.`);
             }

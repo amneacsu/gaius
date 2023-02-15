@@ -1,1 +1,1 @@
-export { GameStage } from './GameStage';
+export { DebugStage } from './DebugStage';
