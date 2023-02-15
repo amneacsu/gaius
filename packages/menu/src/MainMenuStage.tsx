@@ -1,14 +1,13 @@
 import React from 'react';
 import { useStage, Stage } from '@gaius/core';
-import { Button } from '@gaius/ui';
+import { Button, Menu } from '@gaius/ui';
 
 export const MainMenuStage = () => {
   const [, setStage] = useStage();
 
   return (
-    <div>
-      <h1>MainMenuStage</h1>
+    <Menu title="MainMenu">
       <Button onClick={() => setStage(Stage.Game)}>Play</Button>
-    </div>
+    </Menu>
   );
 };

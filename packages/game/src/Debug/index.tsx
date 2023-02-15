@@ -8,6 +8,9 @@ export const Debug = () => {
 
   return (
     <S.Debug>
+      {world.entities.length === 0 && (
+        <div>No entities.</div>
+      )}
       {world.entities.map((entity, index) => {
         return (
           <S.DebugGroup key={index}>

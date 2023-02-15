@@ -1,1 +1,1 @@
-export { ActorDetails } from './Actor/ActorDetails';
+export { MapPosition } from './Map/MapPosition';
