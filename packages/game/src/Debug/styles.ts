@@ -1,6 +1,16 @@
 import styled from 'styled-components';
 import { Panel } from '@gaius/ui';
 
+export const ToggleDebug = styled.button`
+  position: fixed;
+  right: 0;
+  top: 0;
+  margin: 4px;
+  &:before {
+    content: "debug";
+  }
+`;
+
 export const Debug = styled(Panel)`
   position: absolute;
   width: 300px;

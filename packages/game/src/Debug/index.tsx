@@ -5,8 +5,16 @@ import { Button } from '@gaius/ui';
 import * as S from './styles';
 
 export const Debug = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+
   const world = useWorld();
   const [stage] = useStage();
+
+  if (!isOpen) {
+    return (
+      <S.ToggleDebug onClick={() => setIsOpen(true)} />
+    );
+  }
 
   return (
     <S.Debug>
@@ -14,6 +22,7 @@ export const Debug = () => {
 
       <>
         <Button onClick={() => world.createEntity()}>Create entity</Button>
+        <Button onClick={() => setIsOpen(false)}>Close</Button>
       </>
 
       <ul>
