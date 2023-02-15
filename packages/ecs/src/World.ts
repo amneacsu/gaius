@@ -57,4 +57,14 @@ export class World {
   destroy() {
     this.entities = [];
   }
+
+  loadDummyData() {
+    this.createEntity();
+    this.createEntity();
+    this.createEntity();
+    this.createEntity();
+    this.createEntity();
+    this.createEntity();
+    this.createEntity();
+  }
 };
