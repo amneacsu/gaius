@@ -14,7 +14,7 @@ export const PauseStage = () => {
   return (
     <React.Fragment>
       <Menu title="Pause">
-        <Button onClick={() => setStage(Stage.Debug)}>Resume</Button>
+        <Button onClick={() => setStage(Stage.Game)}>Resume</Button>
         <Button onClick={() => quit()}>Quit to menu</Button>
       </Menu>
       <Background id="pause" />

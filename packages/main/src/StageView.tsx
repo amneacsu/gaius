@@ -1,6 +1,6 @@
 import React from 'react';
 import { useStage, Stage } from '@gaius/core';
-import { DebugStage } from '@gaius/game';
+import { GameStage } from '@gaius/game';
 import { MainMenuStage, PauseStage } from '@gaius/menu';
 
 export const StageView = () => {
@@ -8,8 +8,8 @@ export const StageView = () => {
 
   switch (stage ) {
     case Stage.MainMenu: return <MainMenuStage />;
-    case Stage.Debug: return <DebugStage />;
     case Stage.Pause: return <PauseStage />;
+    case Stage.Game: return <GameStage />;
     default: throw new Error(`Unhandled stage ${stage}.`);
   }
 };

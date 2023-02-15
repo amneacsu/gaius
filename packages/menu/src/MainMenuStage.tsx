@@ -8,7 +8,7 @@ export const MainMenuStage = () => {
 
   const load = () => {
     world.loadDummyData();
-    setStage(Stage.Debug);
+    setStage(Stage.Game);
   };
 
   return (

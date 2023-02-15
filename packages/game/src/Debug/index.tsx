@@ -1,16 +1,21 @@
 import React from 'react';
-import { useWorld } from '@gaius/core';
+import { useStage, useWorld } from '@gaius/core';
+import { Button } from '@gaius/ui';
 
 import * as S from './styles';
 
 export const Debug = () => {
   const world = useWorld();
+  const [stage] = useStage();
 
   return (
     <S.Debug>
+      <h3>Stage: {stage}</h3>
+
       {world.entities.length === 0 && (
         <div>No entities.</div>
       )}
+
       {world.entities.map((entity, index) => {
         return (
           <S.DebugGroup key={index}>
@@ -27,6 +32,10 @@ export const Debug = () => {
           </S.DebugGroup>
         );
       })}
+
+      <>
+        <Button onClick={() => world.createEntity()}>Create entity</Button>
+      </>
     </S.Debug>
   );
 };

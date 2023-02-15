@@ -1,8 +1,9 @@
 import React from 'react';
+import styled from 'styled-components';
 import { useStage, Stage } from '@gaius/core';
 import { Background, Button } from '@gaius/ui';
 import { useTicker } from './useTicker';
-import styled from 'styled-components';
+import { Debug } from './Debug';
 
 const GameMenu = styled.div`
   position: fixed;
@@ -22,6 +23,7 @@ export const GameStage = () => {
       <GameMenu>
         <Button onClick={() => setStage(Stage.Pause)}>Pause</Button>
       </GameMenu>
+      <Debug />
       <Background id="game" />
     </React.Fragment>
   );
