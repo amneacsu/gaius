@@ -1,6 +1,6 @@
 import React from 'react';
 import { useStage, Stage, useWorld } from '@gaius/core';
-import { Button, Menu } from '@gaius/ui';
+import { Background, Button, Menu } from '@gaius/ui';
 import { useTicker } from './useTicker';
 import { Debug } from './Debug';
 
@@ -16,6 +16,7 @@ export const GameStage = () => {
         <Button onClick={() => setStage(Stage.Pause)}>Pause</Button>
       </Menu>
       <Debug />
+      <Background id="game" />
     </React.Fragment>
   );
 };

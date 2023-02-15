@@ -9,6 +9,8 @@ const MenuWrapper = styled.div`
   flex-direction: column;
   width: 240px;
   margin: 160px auto 0;
+  background-color: #000000aa;
+  padding: 20px;
 
   header {
     text-align: center;
