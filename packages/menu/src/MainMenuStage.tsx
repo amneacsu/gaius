@@ -4,7 +4,7 @@ import { Background, Button, Menu } from '@gaius/ui';
 
 export const MainMenuStage = () => {
   const [, setStage] = useStage();
-  const world = useWorld();
+  const { world } = useWorld();
 
   const load = () => {
     world.loadDummyData();

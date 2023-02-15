@@ -7,8 +7,10 @@ import * as S from './styles';
 export const Debug = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
-  const world = useWorld();
+  const { world, entities } = useWorld();
   const [stage] = useStage();
+
+  // console.log('render debug', world.entities);
 
   if (!isOpen) {
     return (
@@ -26,7 +28,7 @@ export const Debug = () => {
       </>
 
       <ul>
-        {world.entities.map((entity, index) => {
+        {entities.map((entity, index) => {
           return (
             <li key={index}>
               <S.DebugGroup>

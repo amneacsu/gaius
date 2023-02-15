@@ -4,7 +4,7 @@ import { Background, Button, Menu } from '@gaius/ui';
 
 export const PauseStage = () => {
   const [, setStage] = useStage();
-  const world = useWorld();
+  const { world } = useWorld();
 
   const quit = () => {
     setStage(Stage.MainMenu);

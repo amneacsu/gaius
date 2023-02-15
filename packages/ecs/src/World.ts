@@ -8,11 +8,23 @@ export class World {
   systems: System[] = [];
   entityIndex = 0;
 
+  onEntityCreated: (entity: Entity) => void;
+  onWorldDestroyed: () => void;
+
+  constructor(options: {
+    onEntityCreated: (entity: Entity) => void;
+    onWorldDestroyed: () => void;
+  }) {
+    this.onEntityCreated = options.onEntityCreated;
+    this.onWorldDestroyed = options.onWorldDestroyed;
+  }
+
   createEntity() {
     const entity = new Entity();
     entity.id = this.entityIndex;
     this.entities.push(entity);
     this.entityIndex += 1;
+    this.onEntityCreated(entity);
     return entity;
   }
 
@@ -56,6 +68,7 @@ export class World {
 
   destroy() {
     this.entities = [];
+    this.onWorldDestroyed();
   }
 
   loadDummyData() {

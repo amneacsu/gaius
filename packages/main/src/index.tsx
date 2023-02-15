@@ -2,6 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { StageProvider, WorldProvider } from '@gaius/core';
 
+import { Debug } from './Debug';
 import { ErrorBoundary } from './ErrorBoundary';
 import { StageView } from './StageView';
 
@@ -10,6 +11,7 @@ const Main = () => {
     <ErrorBoundary>
       <WorldProvider>
         <StageProvider>
+          <Debug />
           <StageView />
         </StageProvider>
       </WorldProvider>
