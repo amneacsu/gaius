@@ -13,7 +13,7 @@ export const MainMenuStage = () => {
 
   return (
     <Menu title="MainMenu">
-      <Button onClick={() => setStage(Stage.Debug)}>Play</Button>
+      <Button onClick={() => setStage(Stage.Game)}>Play</Button>
       <Button onClick={() => load()}>Load dummy data</Button>
       <Background id="menu" />
     </Menu>

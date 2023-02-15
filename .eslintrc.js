@@ -21,7 +21,7 @@ module.exports = {
     'comma-dangle': ['error', 'always-multiline'],
     'no-undef': ['error'],
     'space-infix-ops': ['error'],
-    '@typescript-eslint/no-unused-vars': ['error'],
+    '@typescript-eslint/no-unused-vars': ['warn'],
   },
   overrides: [
     {

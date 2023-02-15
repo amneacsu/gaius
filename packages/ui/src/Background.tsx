@@ -15,12 +15,26 @@ const BackgroundWrapper = styled.div<{
   opacity: 0.5;
 `;
 
-type BackgroundId = 'menu' | 'debug' | 'pause';
+type BackgroundId = 'menu' | 'debug' | 'pause' | 'game';
 const backgrounds: Record<BackgroundId, string> = {
-  menu: './assets/menu.png',
-  debug: './assets/debug.png',
-  pause: './assets/xcom.png',
+  menu: './assets/BACK01SCR.png',
+  debug: './assets/BACK02SCR.png',
+  pause: './assets/BACK04SCR.png',
+  game: './assets/BACK05SCR.png',
 };
+
+// './assets/BACK01SCR.png',
+// './assets/BACK02SCR.png',
+// './assets/BACK03SCR.png',
+// './assets/BACK04SCR.png',
+// './assets/BACK05SCR.png',
+// './assets/BACK07SCR.png',
+// './assets/BACK12SCR.png',
+// './assets/BACK13SCR.png',
+// './assets/BACK14SCR.png',
+// './assets/BACK15SCR.png',
+// './assets/BACK16SCR.png',
+// './assets/BACK17SCR.png',
 
 export const Background = ({
   id,
