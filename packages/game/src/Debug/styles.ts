@@ -9,7 +9,20 @@ export const Debug = styled(Panel)`
   font-size: 12px;
 
   h3 {
-    margin: 0;
+    margin: 0 0 10px;
+  }
+
+  ul {
+    margin: 10px 0 0 0;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    &:empty {
+      display: none;
+    }
   }
 `;
 
@@ -22,6 +35,6 @@ export const DebugGroupName = styled.summary`
 `;
 
 export const DebugGroupContents = styled.div`
-  margin-top: 16px;
-  margin-left: 16px;
+  margin: 4px 0;
+  text-indent: 10px;
 `;
