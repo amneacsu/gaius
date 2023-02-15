@@ -2,15 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { Button } from './Button';
+import { Panel } from './Panel';
 
-const MenuWrapper = styled.div`
+const MenuWrapper = styled(Panel)`
   display: flex;
-  gap: 2px;
+  gap: 4px;
   flex-direction: column;
   width: 240px;
   margin: 160px auto 0;
-  background-color: #000000aa;
-  padding: 20px;
 
   header {
     text-align: center;
@@ -19,6 +18,7 @@ const MenuWrapper = styled.div`
 
   ${Button} {
     flex: 1;
+    padding: 8px 24px;
   }
 `;
 
