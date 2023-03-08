@@ -24,6 +24,7 @@ export const Debug = () => {
 
       <>
         <Button onClick={() => world.createEntity()}>Create entity</Button>
+        <Button onClick={() => world.execute()}>Execute</Button>
         <Button onClick={() => setIsOpen(false)}>Close</Button>
       </>
 
