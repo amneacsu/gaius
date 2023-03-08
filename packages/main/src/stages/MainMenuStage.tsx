@@ -5,7 +5,7 @@ import { useWorld } from '../WorldContext';
 
 export const MainMenuStage = () => {
   const [, setStage] = useStage();
-  const { world } = useWorld();
+  const [world] = useWorld();
 
   const load = () => {
     world.loadDummyData();

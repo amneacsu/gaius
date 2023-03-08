@@ -9,13 +9,16 @@ export class World {
   entityIndex = 0;
 
   onEntityCreated: (entity: Entity) => void;
+  onExecute: () => void;
   onWorldDestroyed: () => void;
 
   constructor(options: {
     onEntityCreated: (entity: Entity) => void;
+    onExecute: () => void;
     onWorldDestroyed: () => void;
   }) {
     this.onEntityCreated = options.onEntityCreated;
+    this.onExecute = options.onExecute;
     this.onWorldDestroyed = options.onWorldDestroyed;
   }
 
@@ -64,6 +67,7 @@ export class World {
     });
 
     this.systems.forEach((system) => system.execute());
+    this.onExecute();
   }
 
   destroy() {

@@ -5,7 +5,7 @@ import { useWorld } from '../WorldContext';
 
 export const PauseStage = () => {
   const [, setStage] = useStage();
-  const { world } = useWorld();
+  const [world] = useWorld();
 
   const quit = () => {
     setStage(Stage.MainMenu);
