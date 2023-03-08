@@ -1,7 +1,7 @@
 import React from 'react';
-import { useStage, useWorld } from '@gaius/core';
 import { Button } from '@gaius/ui';
-
+import { useStage } from '../StageContext';
+import { useWorld } from '../WorldContext';
 import * as S from './styles';
 
 export const Debug = () => {

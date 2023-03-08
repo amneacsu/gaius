@@ -1,7 +1,13 @@
 import React from 'react';
 
-import { Stage } from './types';
 import config from './config';
+
+export enum Stage {
+  MainMenu,
+  Pause,
+  Game,
+  Map,
+};
 
 export const StageContext = React.createContext<[
   Stage,

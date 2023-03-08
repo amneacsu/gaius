@@ -1,6 +1,7 @@
 import React from 'react';
-import { useStage, useWorld, Stage } from '@gaius/core';
 import { Background, Button, Menu } from '@gaius/ui';
+import { useStage, Stage } from '../StageContext';
+import { useWorld } from '../WorldContext';
 
 export const PauseStage = () => {
   const [, setStage] = useStage();

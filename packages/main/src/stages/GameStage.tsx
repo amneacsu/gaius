@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useStage, Stage } from '@gaius/core';
-import { Button, Panel } from '@gaius/ui';
+import { Background, Button, Panel } from '@gaius/ui';
+import { useStage, Stage } from '../StageContext';
 
 const GameMenu = styled(Panel)`
   position: fixed;
@@ -10,7 +10,7 @@ const GameMenu = styled(Panel)`
   bottom: 0;
 `;
 
-export const MapStage = () => {
+export const GameStage = () => {
   const [, setStage] = useStage();
 
   return (
@@ -18,6 +18,7 @@ export const MapStage = () => {
       <GameMenu>
         <Button onClick={() => setStage(Stage.Pause)}>Pause</Button>
       </GameMenu>
+      <Background id="game" />
     </React.Fragment>
   );
 };

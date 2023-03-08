@@ -1,6 +1,7 @@
 {
   "name": "@gaius/main",
   "main": "src/index.ts",
+  "version": "0.0.0",
   "scripts": {
     "start": "concurrently -p \"[{name}]\" -n \"server,esbuild,tsc\" -c \"cyan,magenta,yellow\" \"npm:serve\" \"npm:bundle\" \"npm:check-types\"",
     "check-types": "tsc --watch --preserveWatchOutput --noEmit",
@@ -9,6 +10,13 @@
     "build": "esbuild ./src --bundle --outfile=build/index.js --minify"
   },
   "devDependencies": {
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
     "live-server": "^1.2.2"
+  },
+  "dependencies": {
+    "@gaius/ecs": "*",
+    "@gaius/ui": "*",
+    "react": "^18.2.0"
   }
 }

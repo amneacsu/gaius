@@ -1,10 +1,11 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { StageProvider, WorldProvider } from '@gaius/core';
 
 import { Debug } from './Debug';
 import { ErrorBoundary } from './ErrorBoundary';
+import { StageProvider } from './StageContext';
 import { StageView } from './StageView';
+import { WorldProvider } from './WorldContext';
 
 const Main = () => {
   return (

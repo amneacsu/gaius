@@ -1,8 +1,10 @@
 import React from 'react';
-import { useStage, Stage } from '@gaius/core';
-import { GameStage } from '@gaius/game';
-import { MapStage } from '@gaius/map';
-import { MainMenuStage, PauseStage } from '@gaius/menu';
+
+import { useStage, Stage } from './StageContext';
+import { PauseStage } from './stages/PauseStage';
+import { GameStage } from './stages/GameStage';
+import { MainMenuStage } from './stages/MainMenuStage';
+import { MapStage } from './stages/MapStage';
 
 export const StageView = () => {
   const [stage] = useStage();
