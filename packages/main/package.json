@@ -1,22 +1,30 @@
 {
   "name": "@gaius/main",
-  "main": "src/index.ts",
+  "private": true,
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "start": "concurrently -p \"[{name}]\" -n \"server,esbuild,tsc\" -c \"cyan,magenta,yellow\" \"npm:serve\" \"npm:bundle\" \"npm:check-types\"",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "tauri": "tauri",
     "check-types": "tsc --watch --preserveWatchOutput --noEmit",
-    "serve": "live-server --no-browser --watch=./build ./",
-    "bundle": "esbuild ./src --bundle --outfile=build/index.js --sourcemap --watch",
-    "build": "esbuild ./src --bundle --outfile=build/index.js --minify"
-  },
-  "devDependencies": {
-    "@types/react": "^18.0.27",
-    "@types/react-dom": "^18.0.10",
-    "live-server": "^1.2.2"
+    "start": "concurrently -p \"[{name}]\" -n \"tauri,tsc\" -c \"yellow,cyan\" \"npm:dev\" \"npm:check-types\""
   },
   "dependencies": {
     "@gaius/ecs": "*",
     "@gaius/ui": "*",
-    "react": "^18.2.0"
+    "@tauri-apps/api": "^1.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^1.2.2",
+    "@types/node": "^18.7.10",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "concurrently": "^7.6.0",
+    "typescript": "^4.6.4",
+    "vite": "^4.0.0"
   }
 }

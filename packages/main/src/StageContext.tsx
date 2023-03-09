@@ -1,12 +1,14 @@
 import React from 'react';
 
-import config from './config';
-
 export enum Stage {
   MainMenu,
   Pause,
   Game,
   Map,
+};
+
+const config = {
+  initialStage: Stage.Map,
 };
 
 export const StageContext = React.createContext<[

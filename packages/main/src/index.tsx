@@ -6,6 +6,7 @@ import { ErrorBoundary } from './ErrorBoundary';
 import { StageProvider } from './StageContext';
 import { StageView } from './StageView';
 import { WorldProvider } from './WorldContext';
+import './styles.css';
 
 const Main = () => {
   return (
@@ -20,9 +21,7 @@ const Main = () => {
   );
 };
 
-const container = document.getElementById('root');
-const root = createRoot(container!);
-root.render(
+createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <Main />
   </React.StrictMode>,
