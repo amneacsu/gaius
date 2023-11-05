@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Button } from '@gaius/ui';
-import { createWorld } from '@gaius/world';
 
 import './style.css';
+import { WorldProvider } from './core/index.ts';
 
-const world = createWorld();
-setInterval(() => world.execute(), 1000);
+import { DebugScreen } from './DebugScreen/index.tsx';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <Button>Click</Button>
+    <WorldProvider>
+      <DebugScreen />
+    </WorldProvider>
   </React.StrictMode>,
 );

@@ -1,17 +1,14 @@
 import { Component } from './Component';
 
-interface ComponentClass<T = unknown, P = unknown> extends Component {
-  properties: P;
-  new (p?: P): T;
+interface ComponentClass<T = unknown> extends Component {
+  new (...args: any[]): T;
 };
 
 export class Entity {
   id: number;
   components: Component[] = [];
 
-  addComponent<T extends Component, P = unknown>(componentClass: ComponentClass<T, P>, properties?: P) {
-    const component = new componentClass(properties);
-    component.properties = properties ?? componentClass.properties;
+  addComponent(component: Component) {
     this.components.push(component);
 
     return this;
@@ -41,10 +38,10 @@ export class Entity {
     });
   }
 
-  getComponent<T extends Component, P = unknown>(componentClass: ComponentClass<T, P>): Component<P> {
-    return this.components.find((component) => {
+  getComponent<T extends Component>(componentClass: ComponentClass<T>): T | undefined {
+    return this.components.find((component): component is T => {
       return component instanceof componentClass;
-    }) as Component<P>;
+    });
   }
 
   withComponent<T extends Component>(componentClass: ComponentClass<T>, callback: (component: T) => void) {

@@ -1,5 +1,9 @@
 import { World } from '@gaius/ecs';
 
 export const createWorld = () => {
-  return new World();
+  const world = new World();
+
+  world.createEntity();
+
+  return world;
 };
