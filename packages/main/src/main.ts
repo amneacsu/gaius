@@ -1,5 +1,5 @@
-import { World } from '@gaius/ecs';
+import { createWorld } from '@gaius/world';
 
-const world = new World();
+const world = createWorld();
 
 setInterval(() => world.execute(), 1000);
