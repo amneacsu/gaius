@@ -3,16 +3,19 @@
   "main": "src/index.ts",
   "version": "0.0.0",
   "scripts": {
-    "start": "concurrently -p \"[{name}]\" -n \"server,esbuild,tsc\" -c \"cyan,magenta,yellow\" \"npm:serve\" \"npm:bundle\" \"npm:check-types\"",
-    "check-types": "tsc --watch --preserveWatchOutput --noEmit",
-    "serve": "live-server --no-browser --watch=./build ./",
-    "bundle": "esbuild ./src --bundle --outfile=build/index.js --sourcemap --watch",
-    "build": "esbuild ./src --bundle --outfile=build/index.js --minify"
+    "dev": "vite",
+    "start": "concurrently -p \"[{name}]\" -n \"server,esbuild,tsc\" -c \"cyan,magenta,yellow\" \"npm:dev\" \"npm:check-types\"",
+    "check-types": "tsc --watch --preserveWatchOutput --noEmit"
   },
   "devDependencies": {
-    "live-server": "^1.2.2"
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.0.3",
+    "vite": "^4.4.5"
   },
   "dependencies": {
-    "@gaius/ecs": "*"
+    "@gaius/ecs": "*",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }

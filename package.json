@@ -7,6 +7,7 @@
   ],
   "scripts": {
     "lint": "eslint packages/**/src --ext ts",
+    "dev": "npm run dev -w @gaius/main",
     "start": "npm run start -w @gaius/main"
   },
   "author": "",
@@ -15,8 +16,7 @@
     "@typescript-eslint/eslint-plugin": "^5.51.0",
     "@typescript-eslint/parser": "^5.51.0",
     "concurrently": "^7.2.0",
-    "esbuild": "^0.14.1",
     "eslint": "^8.33.0",
-    "typescript": "^4.9.5"
+    "typescript": "^5.0.2"
   }
 }
