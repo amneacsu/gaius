@@ -1,3 +1,5 @@
-export abstract class Component<P = unknown> {
-  properties: P;
+export abstract class Component {
+  constructor() {
+
+  }
 }
