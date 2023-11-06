@@ -46,4 +46,21 @@ export class World {
   destroy() {
     this.entities = [];
   }
+
+  serialize() {
+    return this.entities.map((entity) => {
+      return {
+        id: entity.id,
+        components: entity.components.map((component) => {
+          return {
+            type: component.constructor.name,
+            properties: Object.keys(component).reduce((acc, p) => {
+              acc[p] = (component as Record<string, unknown>)[p];
+              return acc;
+            }, {} as Record<string, unknown>),
+          };
+        }),
+      };
+    });
+  }
 };

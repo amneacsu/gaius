@@ -22,9 +22,18 @@ export const DebugScreen = () => {
         type="button"
         onClick={() => {
           const entity = world.createEntity();
-          entity.addComponent(new DummyComponent());
+          entity.addComponent(new DummyComponent('bar'));
         }}>
         Create entity
+      </Button>
+
+      <Button
+        type="button"
+        onClick={() => {
+          const data = world.serialize();
+          console.log(JSON.stringify(data, null, 2));
+        }}>
+        Serialize
       </Button>
 
       <h3>Entities</h3>
