@@ -1,2 +1,2 @@
-build/*
-dev/*
+dist/build/index.js
+dev

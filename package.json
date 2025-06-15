@@ -7,8 +7,8 @@
     "start": "concurrently -p \"[{name}]\" -n \"server,esbuild,tsc\" -c \"cyan,magenta,yellow\" \"npm:serve\" \"npm:bundle\" \"npm:check-types\"",
     "check-types": "tsc --watch --preserveWatchOutput --noEmit",
     "serve": "http-server ./",
-    "bundle": "esbuild src/index.ts --bundle --outfile=build/index.js --sourcemap --watch",
-    "build": "esbuild src/index.ts --bundle --outfile=build/index.js --minify"
+    "bundle": "esbuild src/index.ts --bundle --outfile=dist/build/index.js --sourcemap --watch",
+    "build": "esbuild src/index.ts --bundle --outfile=dist/build/index.js --minify"
   },
   "author": "",
   "license": "ISC",
