@@ -1,5 +1,5 @@
 import { World } from './ecs';
-
+import './style.css';
 import { RendererSystem } from './systems/RendererSystem';
 import { MapSystem } from './systems/MapSystem';
 import { KeyboardSystem } from './systems/KeyboardSystem';
@@ -14,3 +14,5 @@ world
 setInterval(() => {
   world.execute();
 }, 1000 / 60);
+
+console.log('Hello from rspack!');

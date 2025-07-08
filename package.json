@@ -2,23 +2,21 @@
   "name": "gaius",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "scripts": {
-    "lint": "eslint src --ext ts",
-    "start": "concurrently -p \"[{name}]\" -n \"server,esbuild,tsc\" -c \"cyan,magenta,yellow\" \"npm:serve\" \"npm:bundle\" \"npm:check-types\"",
-    "check-types": "tsc --watch --preserveWatchOutput --noEmit",
-    "serve": "http-server ./",
-    "bundle": "esbuild src/index.ts --bundle --outfile=dist/build/index.js --sourcemap --watch",
-    "build": "esbuild src/index.ts --bundle --outfile=dist/build/index.js --minify"
+    "build": "rspack --mode=production --node-env=production",
+    "check-types": "tsc --noEmit",
+    "start": "rspack serve",
+    "lint": "eslint src --ext ts"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@rspack/cli": "^1.4.2",
+    "@rspack/core": "^1.4.2",
     "@typescript-eslint/eslint-plugin": "^5.5.0",
     "@typescript-eslint/parser": "^5.5.0",
-    "concurrently": "^7.2.0",
-    "esbuild": "^0.14.1",
     "eslint": "^7.32.0",
-    "http-server": "^14.0.0",
     "typescript": "^4.6.3"
   }
 }
