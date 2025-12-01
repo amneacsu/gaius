@@ -23,12 +23,12 @@ export class MapSystem extends System {
       .addComponent(new FrameComponent({
         x: 0,
         y: 0,
-        w: 600,
-        h: 576,
+        w: 1200,
+        h: 676,
       }))
       .addComponent(new MapDataComponent({
-        width: 16,
-        height: 16,
+        width: 1024,
+        height: 1024,
         random: true,
       }))
       .addComponent(new MapCameraComponent({

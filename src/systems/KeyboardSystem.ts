@@ -35,7 +35,7 @@ export class KeyboardSystem extends System {
       entity.withComponent(MapCameraComponent, (mapCamera) => {
         let deltaX = 0;
         let deltaY = 0;
-        const step = .5;
+        const step = 1;
         if (this.keyDown.ArrowUp) { deltaX -= step; deltaY -= step; }
         if (this.keyDown.ArrowDown) { deltaX += step; deltaY += step; }
         if (this.keyDown.ArrowLeft) { deltaX -= step; deltaY += step; }

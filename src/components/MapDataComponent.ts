@@ -10,7 +10,7 @@ const generateMapData = (width: number, height: number) => {
     data.push({
       x,
       y,
-      type: rng.sample([0, 2]),
+      type: rng.sample([0, 1, 2, 3, 4, 10, 20, 30, 28, 38, 39, 48, 49, 54, 55, 56, 57, 58, 59]),
     });
   }
 

@@ -7,3 +7,11 @@ body {
 canvas {
   display: block;
 }
+
+pre {
+  position: fixed;
+  padding: 10px 20px;
+  background-color: #00000090;
+  margin: 20px;
+  width: 240px;
+}
